@@ -1,4 +1,5 @@
 import React from 'react';
+import NavBar from './nav-bar'
 
 export default class MainLayout extends React.Component {
   constructor() {
@@ -6,6 +7,6 @@ export default class MainLayout extends React.Component {
   }
 
   render() {
-    return (this.props.children);
+    return (<div><NavBar /> {this.props.children} </div>);
   }
 }

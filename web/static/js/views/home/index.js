@@ -1,7 +1,8 @@
-import React, { PropTypes }     from 'react';
+import React    from 'react';
 import { connect }              from 'react-redux';
 import ReactCSSTransitionGroup  from 'react-addons-css-transition-group';
 import { attachChannelEvents } from '../../actions/home'
+import LamDataCards from '../../components/lam-data-cards'
 
 class HomeIndexView extends React.Component {
   constructor(props) {
@@ -14,7 +15,9 @@ class HomeIndexView extends React.Component {
     const { dispatch } = this.props;
     return (
       <div>
-          <h1>Test</h1>
+        <div className="row">
+          <LamDataCards />
+        </div>
       </div>
     );
   }

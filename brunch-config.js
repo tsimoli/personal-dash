@@ -90,8 +90,7 @@ exports.config = {
       'react-router-redux',
       'redux',
       'redux-logger',
-      'redux-thunk',
-      'history'
+      'redux-thunk'
     ],
   },
 };
