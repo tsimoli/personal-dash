@@ -3,7 +3,8 @@
 /db
 /deps
 /*.ez
-/rethinkdb_data
+rethinkdb_data/
+
 # Generate on crash by the VM
 erl_crash.dump
 
