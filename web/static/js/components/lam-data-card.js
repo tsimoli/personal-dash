@@ -17,12 +17,12 @@ export default class LamDataCard extends React.Component {
             <div className="card light-green accent-2">
               <div className="card-content black-text">
                 <span className="card-title">{ lamData.location_name }</span>
-                <h5>Helsinki</h5>
+                <h5>Helsinki <span><i className="fa fa-arrow-right"></i></span></h5>
                 <p>{ lamData.average_speed2 } km/h</p>
                 <p>{ lamData.traffic_volume2 } autoa/h</p>
-                <h5>Turku</h5>
+                <h5><span><i className="fa fa-arrow-left"></i></span> Turku</h5>
                 <p>{ lamData.average_speed1 } km/h</p>
-                <p>{ lamData.traffic_volume1 } autoa/h</p>
+                <p>{ lamData.traffic_volume1 } cars/h</p>
               </div>
               <div class="card-action">
                 <p>{ measurement_time.toLocaleDateString("fi-FI", dateOptions) }</p>
