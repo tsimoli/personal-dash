@@ -22,7 +22,7 @@ export default class LamDataCard extends React.Component {
                 <p>{ lamData.traffic_volume2 } autoa/h</p>
                 <h5><span><i className="fa fa-arrow-left"></i></span> Turku</h5>
                 <p>{ lamData.average_speed1 } km/h</p>
-                <p>{ lamData.traffic_volume1 } cars/h</p>
+                <p>{ lamData.traffic_volume1 } autoa/h</p>
               </div>
               <div class="card-action">
                 <p>{ measurement_time.toLocaleDateString("fi-FI", dateOptions) }</p>

@@ -33,6 +33,8 @@ defmodule PersonalDash.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
-     {:rethinkdb, "~> 0.4.0"}]
+     {:rethinkdb, "~> 0.4.0"},
+     {:exrm, "~> 1.0"}
+    ]
   end
 end

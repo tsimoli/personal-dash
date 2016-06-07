@@ -7,7 +7,7 @@ use Mix.Config
 
 # Configures the endpoint
 config :personal_dash, PersonalDash.Endpoint,
-  url: [host: "localhost"],
+  url: [host: "127.0.0.1"],
   root: Path.dirname(__DIR__),
   secret_key_base: "2u2j1/+hA3VP991l5+5QPvWUiDwkErUOQX45jijPNlZx3vVlI8f5O1pBWkyxN4Rt",
   render_errors: [accepts: ~w(html json)],
