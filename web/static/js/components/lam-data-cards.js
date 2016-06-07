@@ -11,7 +11,7 @@ export default class LamDataCards extends React.Component {
     var lamDataCards = lamDatas.map((lamData, index) => {
       return <LamDataCard key={ index } lamData={ lamData }/>;
     });
-    return <div className="section">
+    return <div className="center">
       { lamDataCards }
       </div>
   }
