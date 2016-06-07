@@ -13,6 +13,12 @@ defmodule PersonalDash.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/api", PersonalDash do
+    pipe_through :api # Use json api
+
+    get "/lamdata", LamDataController, :fetch_lam_data
+  end
+
   scope "/", PersonalDash do
     pipe_through :browser # Use the default browser stack
 
