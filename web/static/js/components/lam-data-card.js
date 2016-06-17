@@ -13,8 +13,8 @@ export default class LamDataCard extends React.Component {
       day: "numeric", hour: "2-digit", minute: "2-digit"
     }
     return (
-          <div className="col s2">
-            <div className="card light-green accent-2">
+          <div className="col s12 m6 l2">
+            <div className="card blue-grey lighten-1">
               <div className="card-content black-text">
                 <span className="card-title">{ lamData.location_name }</span>
                 <h5>Helsinki <span><i className="fa fa-arrow-right"></i></span></h5>
