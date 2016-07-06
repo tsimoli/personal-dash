@@ -1,8 +1,8 @@
 import React    from 'react';
 import { connect }              from 'react-redux';
 import ReactCSSTransitionGroup  from 'react-addons-css-transition-group';
-import { attachChannelEvents , fetchLamData} from '../../actions/home'
-import LamDataCards from '../../components/lam-data-cards'
+import { attachChannelEvents , fetchLamData} from '../../actions/home';
+import LamDataCards from '../../components/lam-data-cards';
 
 class HomeIndexView extends React.Component {
   constructor(props) {

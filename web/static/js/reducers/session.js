@@ -9,10 +9,10 @@ const dashChannel = socket.channel('personal_dash:stream');
 
 dashChannel.join()
 .receive("ok", resp => {
-  console.log("Joined successfully", resp)
+    console.log("Joined successfully", resp);
 })
 .receive("error", resp => {
-  console.log("Unable to join", resp)
+    console.log("Unable to join", resp);
 })
 
 const initialState = {
@@ -26,7 +26,7 @@ export default function reducer(state = initialState, action = {}) {
       return {
         ...state,
         socket: action.socket,
-        dashChannel: action.channel,
+        dashChannel: action.channel
       };
     default:
       return state;

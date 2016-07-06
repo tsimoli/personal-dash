@@ -9,8 +9,10 @@ defmodule PersonalDash do
     children = [
       # Start the endpoint when the application starts
       supervisor(PersonalDash.Endpoint, []),
-      worker(PersonalDash.DB, [])
-      # Here you could define other workers and supervisors as children
+      worker(PersonalDash.DB, []),
+      worker(Task, [PersonalDash.ChangeListener.start_listening("lam_data")], [restart: :transient, id: "lam_data_listener"]),
+      worker(Task, [PersonalDash.ChangeListener.start_listening("weather_data")], [restart: :transient, id: "weather_data_listener"])
+      # Here you could define other workers and supervissudo apt-get install -y nodejsors as children
       # worker(PersonalDash.Worker, [arg1, arg2, arg3]),
     ]
 
