@@ -1,0 +1,4 @@
+## IP of the node
+-name personal-dash@${MY_POD_IP}
+
+-setcookie elixirapp

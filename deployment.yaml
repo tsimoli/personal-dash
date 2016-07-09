@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: personal-dash
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: personal-dash
+    spec:
+      containers:
+        - name: personal-dash
+          image: gcr.io/personal_1335/personal-dash:0.0.39
+          env:
+            - name: MY_POD_IP
+              valueFrom:
+                fieldRef:
+                 fieldPath: status.podIP
+            - name: RELX_REPLACE_OS_VARS
+              value: "true"
+          ports:
+            - containerPort: 8888
+      imagePullSecrets:
+        - name: mydockercfg

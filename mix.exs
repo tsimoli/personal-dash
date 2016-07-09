@@ -3,7 +3,7 @@ defmodule PersonalDash.Mixfile do
 
   def project do
     [app: :personal_dash,
-     version: "0.0.1",
+     version: "0.0.39",
      elixir: "~> 1.0",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
@@ -17,7 +17,7 @@ defmodule PersonalDash.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {PersonalDash, []},
-     applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext, :rethinkdb]]
+     applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext, :rethinkdb, :httpoison]]
   end
 
   # Specifies which paths to compile per environment.
@@ -34,7 +34,8 @@ defmodule PersonalDash.Mixfile do
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
      {:rethinkdb, "~> 0.4.0"},
-     {:exrm, "~> 1.0"}
+     {:exrm, "~> 1.0"},
+     {:httpoison, "~> 0.9.0"}
     ]
   end
 end
