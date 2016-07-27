@@ -7,6 +7,7 @@ defmodule PersonalDash.KubePoller do
   end
 
   def init(init) do
+    Agent.start_link(fn -> Map.new end, name: __MODULE__)
     Process.send_after(self(), :poll, 2000)
     {:ok, init}
   end
@@ -39,19 +40,22 @@ defmodule PersonalDash.KubePoller do
     end
   end
 
-  def parse_request({:ok, %HTTPoison.Response{status_code: 200, body: body}}) do
+  defp parse_request({:ok, %HTTPoison.Response{status_code: 200, body: body}}) do
     Poison.decode!(body)["items"]
   end
 
-  def parse_request(response) do
+  defp parse_request(response) do
     Logger.info(response)
     Logger.error("Failed to parse response")
   end
 
-  def ping_available_nodes(items) do
+  defp ping_available_nodes(items) do
     Enum.each(items, fn item ->
       node_atom = String.to_atom(item["metadata"]["labels"]["app"] <> "@" <> item["status"]["podIP"])
-      Logger.info(Atom.to_string(Node.ping(node_atom)))
+      case Node.ping(node_atom) do
+        :pong -> Agent.update(__MODULE__, &Map.put(&1, node_atom, item["metadata"]["labels"]["app"]))
+        :pang -> Agent.update(__MODULE__, &Map.delete(&1, node_atom))
+      end
     end)
   end
 end

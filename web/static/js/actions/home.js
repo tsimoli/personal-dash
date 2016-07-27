@@ -7,7 +7,7 @@ export function fetchLamData() {
             .then((data) => {
                 dispatch({
                     type: Constants.LAM_DATA,
-                    lamData: data.lam_data.data
+                    lamData: data.lam_data
                 });
             });
     };

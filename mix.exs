@@ -3,7 +3,7 @@ defmodule PersonalDash.Mixfile do
 
   def project do
     [app: :personal_dash,
-     version: "0.0.39",
+     version: "0.0.51",
      elixir: "~> 1.0",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,

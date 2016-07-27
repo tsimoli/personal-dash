@@ -1,0 +1,14 @@
+---
+  kind: "Service"
+  apiVersion: "v1"
+  metadata: 
+    name: "personal-dash-service"
+  spec: 
+    selector: 
+      app: "personal-dash"
+    ports: 
+      - 
+        protocol: "TCP"
+        port: 80
+        targetPort: 8888
+    type: "NodePort"
