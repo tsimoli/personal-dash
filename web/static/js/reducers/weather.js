@@ -1,7 +1,7 @@
 import Constants from "../constants";
 
 const initialState = {
-    lamData: []
+    weatherData: []
 };
 
 export default function reducer(state = initialState, action = {}) {
