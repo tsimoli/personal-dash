@@ -1,5 +1,5 @@
-import React from 'react'
-import LamDataCard from './lam-data-card'
+import React from 'react';
+import LamDataCard from './lam-data-card';
 
 export default class LamDataCards extends React.Component {
   constructor() {
@@ -11,8 +11,8 @@ export default class LamDataCards extends React.Component {
     var lamDataCards = lamDatas.map((lamData, index) => {
       return <LamDataCard key={ index } lamData={ lamData }/>;
     });
-    return <div className="center">
+      return (<div className="center">
       { lamDataCards }
-      </div>
+              </div>);
   }
 }

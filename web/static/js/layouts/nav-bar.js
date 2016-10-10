@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Link }  from 'react-router';
 export default class NavBar extends React.Component {
   constructor() {
@@ -13,6 +13,6 @@ export default class NavBar extends React.Component {
       <Link to="/weather"> Weather </Link>
     </div>
   </nav>
-    )
+    );
   }
 }
