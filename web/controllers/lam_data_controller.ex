@@ -4,14 +4,10 @@ defmodule PersonalDash.LamDataController do
   alias PersonalDash.KubePoller
 
   def fetch_lam_data(conn, _params) do
-    lam_data = call_lamstate()
-    Phoenix.Controller.json conn, %{lam_data: Enum.map(lam_data, fn {key, value} -> value end)}
+    Phoenix.Controller.json conn, %{lam_data: Roacher.LamWorker.get_lam_data}
   end
 
-  def call_lamstate() do
-    Task.Supervisor.async(PersonalDash.TaskSupervisor, fn ->
-      roacher_node = Agent.get(KubePoller, fn map -> Enum.find(map, fn({key, value}) -> value == "roacher" end)end)
-      GenServer.call({Roacher.LamState, elem(roacher_node, 0)}, :get)
-    end) |> Task.await()
+  def fetch_weather_data(conn, _params) do
+    Phoenix.Controller.json conn, %{weather: Roacher.WeatherWorker.get_weather}
   end
 end

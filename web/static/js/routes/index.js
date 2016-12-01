@@ -8,7 +8,6 @@ export default function configRoutes(store) {
   return (
     <Route component={MainLayout}>
       <Route path="/" component={HomeIndexView}/>
-      <Route path="/weather" component={WeatherIndexView}/>
     </Route>
   );
 }

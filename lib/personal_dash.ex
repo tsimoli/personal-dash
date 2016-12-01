@@ -9,23 +9,21 @@ defmodule PersonalDash do
     children = [
       # Start the endpoint when the application starts
       supervisor(PersonalDash.Endpoint, []),
-      supervisor(Task.Supervisor, [[name: PersonalDash.TaskSupervisor]])
-      #worker(PersonalDash.DB, []),
-      #worker(Task, [PersonalDash.ChangeListener.start_listening("lam_data")], [restart: :transient, id: "lam_data_listener"]),
-      #worker(Task, [PersonalDash.ChangeListener.start_listening("weather_data")], [restart: :transient, id: "weather_data_listener"])
-      # Here you could define other workers and supervissudo apt-get install -y nodejsors as children
+      supervisor(Task.Supervisor, [[name: PersonalDash.TaskSupervisor]]),
+      worker(Roacher.LamWorker, [[]]),
+      worker(Roacher.WeatherWorker, [[]])
       # worker(PersonalDash.Worker, [arg1, arg2, arg3]),
     ]
 
-    kube_poller = case System.get_env("KUBERNETES_SERVICE_HOST") do
-                    nil -> []
-                    _ -> [worker(PersonalDash.KubePoller, [[]])]
-                  end
+    # kube_poller = case System.get_env("KUBERNETES_SERVICE_HOST") do
+    #                 nil -> []
+    #                 _ -> [worker(PersonalDash.KubePoller, [[]])]
+    #               end
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: PersonalDash.Supervisor]
-    Supervisor.start_link(children ++ kube_poller, opts)
+    Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration

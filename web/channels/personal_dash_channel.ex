@@ -14,8 +14,8 @@ defmodule PersonalDash.PersonalDashChannel do
 
   # It is also common to receive messages from the client and
   # broadcast to everyone in the current topic (visual_web:stream).
-  def handle_in("words", payload, socket) do
-    broadcast socket, "words", payload
+  def handle_in("events", payload, socket) do
+    broadcast socket, "events", payload
 
     {:noreply, socket}
   end

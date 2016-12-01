@@ -17,6 +17,8 @@ defmodule PersonalDash.Router do
     pipe_through :api # Use json api
 
     get "/lamdata", LamDataController, :fetch_lam_data
+
+    get "/weather", LamDataController, :fetch_weather_data
   end
 
   scope "/", PersonalDash do

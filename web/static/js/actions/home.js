@@ -13,6 +13,19 @@ export function fetchLamData() {
     };
 }
 
+
+export function fetchWeatherData() {
+  return dispatch => {
+    httpGet("/api/weather")
+      .then((data) => {
+        dispatch({
+          type: Constants.WEATHER_DATA,
+          weatherData: data.weather
+        });
+      });
+  };
+}
+
 export function attachChannelEvents(dashChannel) {
     return dispatch => {
         dashChannel.on("lam_data", payload => {

@@ -17,7 +17,7 @@ defmodule PersonalDash.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {PersonalDash, []},
-     applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext, :rethinkdb, :httpoison]]
+     applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext, :httpoison, :erlsom, :detergentex, :detergent, :xmerl, :poison]]
   end
 
   # Specifies which paths to compile per environment.
@@ -33,9 +33,11 @@ defmodule PersonalDash.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
-     {:rethinkdb, "~> 0.4.0"},
      {:exrm, "~> 1.0"},
-     {:httpoison, "~> 0.9.0"}
+     {:httpoison, "~> 0.9.0"},
+     {:erlsom, github: "willemdj/erlsom"},
+     {:detergentex, git: "https://github.com/tsimoli/detergentex.git"},
+     {:poison, "~> 2.0"}
     ]
   end
 end

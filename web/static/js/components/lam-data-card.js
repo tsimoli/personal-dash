@@ -14,7 +14,7 @@ export default class LamDataCard extends React.Component {
     };
     return (
           <div className="col s12 m6 l2">
-            <div className="card blue-grey lighten-1">
+            <div className="card indigo accent-1">
               <div className="card-content black-text">
                 <span className="card-title">{ lamData.location_name }</span>
                 <h5>Helsinki <span><i className="fa fa-arrow-right"></i></span></h5>
@@ -24,7 +24,7 @@ export default class LamDataCard extends React.Component {
                 <p>{ lamData.average_speed1 } km/h</p>
                 <p>{ lamData.traffic_volume1 } autoa/h</p>
               </div>
-              <div class="card-action">
+              <div className="card-action">
                 <p>{ measurement_time.toLocaleDateString("fi-FI", dateOptions) }</p>
               </div>
             </div>

@@ -1,7 +1,11 @@
 import Constants from "../constants";
 
 const initialState = {
-    lamData: []
+  lamData: [],
+  weatherData: {
+    "current": {},
+    "daily": []
+  }
 };
 
 export default function reducer(state = initialState, action = {}) {
@@ -14,9 +18,9 @@ export default function reducer(state = initialState, action = {}) {
         });
         return {...state, lamData: tmpLamData.push(action.new_lam_data) };
     case Constants.WEATHER_DATA:
-        return {...state, weatherData: action.weatherData || []};
+        return {...state, weatherData: action.weatherData || []};
     case Constants.NEW_WEATHER_DATA:
-        return {...state, weatherData: action.weatherData || []};
+        return {...state, weatherData: action.weatherData || []};
     default:
         return state;
     }

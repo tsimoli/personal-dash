@@ -12,7 +12,7 @@ export default class LamDataCards extends React.Component {
       return <LamDataCard key={ index } lamData={ lamData }/>;
     });
       return (<div className="center">
-      { lamDataCards }
+                { lamDataCards }
               </div>);
   }
 }
