@@ -2,8 +2,9 @@
 
 Dashboard for personal use:
 
+  * Shows traffic to work
+  * Shows weather and forecast
+
 Todo:
 
-  * LAM(Liikenteen Automaattinen Mittauspiste) data
-  * Weather and forecast
-  * News feed
+  * Convert LAM(Liikenteen Automaattinen Mittauspiste) data to use json endpoint(SOAP is depricated)
